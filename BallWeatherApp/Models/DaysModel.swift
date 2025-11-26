@@ -44,5 +44,6 @@ let days: [Day] = [
     Day(day: "Thu", weather: .cloudy, temp: 8),
     Day(day: "Fri", weather: .sunny, temp: 14),
     Day(day: "Sat", weather: .sunny, temp: 13),
-    Day(day: "Sun", weather: .sunnyCloudy, temp: 9)
+    Day(day: "Sun", weather: .sunnyCloudy, temp: 9),
+    Day(day: "Mon", weather: .sunnyCloudy, temp: 9)
 ]

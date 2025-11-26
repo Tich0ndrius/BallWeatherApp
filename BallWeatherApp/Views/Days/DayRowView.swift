@@ -9,6 +9,8 @@ import SwiftUI
 
 struct DayRowView: View {
     let days: [Day]
+    private let height: CGFloat = 180
+    private let horizontalPadding: CGFloat = 16
     
     var body: some View {
         GeometryReader { geo in
@@ -30,7 +32,6 @@ struct DayRowView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 48, height: 48)
-                                    //                    .clipShape(Capsule())
                                 )
                                 .overlay {
                                     Circle()
@@ -47,6 +48,16 @@ struct DayRowView: View {
                 }
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(LinearGradient(gradient: Gradient(colors: [.mint, Color("darkBlue")]),
+                                         startPoint:.topLeading,
+                                         endPoint: .bottomTrailing)
+                          )
+            )
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .shadow(radius: 2)
+            .padding()
         }
     }
 }
@@ -60,7 +71,8 @@ struct DayRowView_Previews: PreviewProvider {
             Day(day: "Thu", weather: .cloudy, temp: 8),
             Day(day: "Fri", weather: .sunny, temp: 14),
             Day(day: "Sat", weather: .sunny, temp: 13),
-            Day(day: "Sun", weather: .sunnyCloudy, temp: 9)]
+            Day(day: "Sun", weather: .sunnyCloudy, temp: 9),
+            Day(day: "Mon", weather: .sunnyCloudy, temp: 9)]
         )
     }
 }

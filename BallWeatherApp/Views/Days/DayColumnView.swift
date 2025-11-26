@@ -43,6 +43,6 @@ struct DayColumnView: View {
 
 struct DayColumnView_Previews: PreviewProvider {
     static var previews: some View {
-        DayColumnView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 99))
+        DayColumnView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 7))
     }
 }
