@@ -10,10 +10,11 @@ import SwiftUI
 struct DayColumnView: View {
     let day: Day
     var body: some View {
-        VStack{
+        VStack(spacing: 8){
             Text("\(day.day)")
                 .font(.system(size: 44, weight: .bold, design: .default))
                 .foregroundStyle(.white)
+                .padding(.top)
             
             Capsule()
                 .fill(.white)
@@ -31,11 +32,11 @@ struct DayColumnView: View {
                         .stroke(.blue, lineWidth: 4)
                 }
                 .shadow(radius: 4)
-                .padding()
             
             Text("\(day.temp)" + " °C")
                 .font(.system(size: 40, weight: .bold, design: .default))
                 .foregroundStyle(.white)
+                .padding(.bottom)
         }
     }
 }

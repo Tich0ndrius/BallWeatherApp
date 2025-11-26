@@ -17,7 +17,7 @@ struct ContentView: View {
             
             VStack{
                 CityButtonView()
-                Spacer()
+//                Spacer()
                 DayColumnView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 99))
                 Spacer()
                 
@@ -26,7 +26,9 @@ struct ContentView: View {
                     Day(day: "Tue", weather: .rainy, temp: 5),
                     Day(day: "Wed", weather: .snowy, temp: -3),
                     Day(day: "Thu", weather: .cloudy, temp: 8),
-                    Day(day: "Fri", weather: .sunny, temp: 14)]
+                    Day(day: "Fri", weather: .sunny, temp: 14),
+                    Day(day: "Sat", weather: .sunny, temp: 13),
+                    Day(day: "Sun", weather: .sunnyCloudy, temp: 9)]
                 )
                 
                 Spacer()
