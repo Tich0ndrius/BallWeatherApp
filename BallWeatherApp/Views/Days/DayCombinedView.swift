@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct DayCombinedView: View {
+    
+    @Binding var selectedCity: City
+    let cities: [City]
+    
     var body: some View {
         ZStack{
             LinearGradient(gradient: Gradient(colors: [.mint, .blue]),
@@ -16,12 +20,14 @@ struct DayCombinedView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
-                CityButtonView()
-//                Spacer()
-                DayColumnView(day: days[0])
+                CityPickerView(cities: cities, selectedCity: $selectedCity)
+                //is there a better method?
+                if let today = selectedCity.forecast.first {
+                    DayColumnView(day: today)
+                }
                 Spacer()
                 
-                DayRowView(days: days)
+                DayRowView(days: Array(selectedCity.forecast.dropFirst()))
                 
                 
                 Spacer()
@@ -31,7 +37,9 @@ struct DayCombinedView: View {
 }
 
 struct DayCombinedView_Previews: PreviewProvider {
+    @State static var selectedCity = sampleCities[0]
+    
     static var previews: some View {
-        DayCombinedView()
+        DayCombinedView(selectedCity: $selectedCity, cities: sampleCities)
     }
 }
