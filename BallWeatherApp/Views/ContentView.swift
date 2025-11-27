@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var selectedCity = sampleCities[0]
     
     var body: some View {
+        
         TabView(selection: $selectedTab){
             
             CompassView()
@@ -34,7 +35,6 @@ struct ContentView: View {
                 .tabItem { Label("Map", systemImage: "map")}
                 .tag(Tab.tab3)
         }
-//        .accentColor(.white)
     }
 }
 

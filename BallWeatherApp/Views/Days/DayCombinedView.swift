@@ -17,7 +17,7 @@ struct DayCombinedView: View {
             LinearGradient(gradient: Gradient(colors: [.mint, .blue]),
                            startPoint:.topLeading,
                            endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.top)
             
             VStack{
                 CityPickerView(cities: cities, selectedCity: $selectedCity)

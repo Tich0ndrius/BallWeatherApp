@@ -10,15 +10,23 @@ import SwiftUI
 struct CityPickerView: View {
     let cities: [City]
     @Binding var selectedCity: City
-
-        var body: some View {
+    
+    var body: some View {
+        HStack{
             Picker("City", selection: $selectedCity) {
                 ForEach(cities) { city in
-                    Text(city.name).tag(city)
+                    Text(city.name)
+                        .tag(city)
                 }
             }
             .pickerStyle(.menu)
             .padding(.horizontal)
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color(.white))
+                .frame(width: 180, height: 40)
+        )
     }
 }
 
@@ -26,6 +34,14 @@ struct CityButtonView_Previews: PreviewProvider {
     @State static var selectedCity = sampleCities[0]
     
     static var previews: some View {
-        CityPickerView(cities: sampleCities, selectedCity: $selectedCity)
+        Group{
+            CityPickerView(cities: sampleCities, selectedCity: $selectedCity)
+        }
+        .previewLayout(.fixed(width: 200, height: 80))
+        .background(
+            Rectangle()
+                .fill(Color(.blue))
+                .frame(width: 20, height: 40)
+        )
     }
 }
