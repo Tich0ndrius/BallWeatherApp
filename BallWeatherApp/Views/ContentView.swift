@@ -8,33 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    enum Tab: Hashable {
+        case tab1
+        case tab2
+        case tab3
+    }
+    
+    @State private var selectedTab: Tab = .tab2
+    
     var body: some View {
-        ZStack{
-            LinearGradient(gradient: Gradient(colors: [.mint, .blue]),
-                           startPoint:.topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+        TabView(selection: $selectedTab){
+            //            CompassView()
+            //                .tabItem { Label("Compass", systemImage: "barometer")}
+            //                .tag(0)
             
-            VStack{
-                CityButtonView()
-//                Spacer()
-                DayColumnView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 7))
-                Spacer()
-                
-                DayRowView(days: [
-                    Day(day: "Mon", weather: .sunnyCloudy, temp: 10),
-                    Day(day: "Tue", weather: .rainy, temp: 5),
-                    Day(day: "Wed", weather: .snowy, temp: -3),
-                    Day(day: "Thu", weather: .cloudy, temp: 8),
-                    Day(day: "Fri", weather: .sunny, temp: 14),
-                    Day(day: "Sat", weather: .sunny, temp: 13),
-                    Day(day: "Sun", weather: .sunnyCloudy, temp: 9),
-                    Day(day: "Mon", weather: .sunnyCloudy, temp: 9)]
-                )
-                
-                Spacer()
-            }
+            DayCombinedView()
+                .tabItem {
+                    Label("Weather", systemImage: "sun.max")
+                }
+                .tag(Tab.tab2)
+            
+            //            MapView()
+            //                .tabItem { Label("Map", systemImage: "map")}
+            //                .tag(2)
         }
+        .accentColor(.white)
     }
 }
 

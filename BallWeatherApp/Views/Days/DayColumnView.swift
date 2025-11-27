@@ -25,7 +25,7 @@ struct DayColumnView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 144, height: 144)
-                    //                    .clipShape(Capsule())
+                        .shadow(radius: 2)
                 )
                 .overlay {
                     Circle()

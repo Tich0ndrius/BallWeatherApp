@@ -25,7 +25,7 @@ enum Weather {
         case .sunnyCloudy:
             return "cloud.sun.fill"
         case .snowy:
-            return "cloud.snow"
+            return "cloud.snow.fill"
         }
     }
 }

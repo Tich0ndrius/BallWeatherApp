@@ -15,6 +15,7 @@ struct CityButtonView: View {
             Text("City")
                 .frame(width: 280, height: 40)
                 .background(Color.white)
+                .foregroundColor(.blue)
                 .font(.system(size: 20, weight: .bold, design: .default))
                 .cornerRadius(10)
         }

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DayRowView: View {
     let days: [Day]
-    private let height: CGFloat = 180
-    private let horizontalPadding: CGFloat = 16
     
     var body: some View {
         GeometryReader { geo in
@@ -32,6 +30,7 @@ struct DayRowView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 48, height: 48)
+                                        .shadow(radius: 2)
                                 )
                                 .overlay {
                                     Circle()
@@ -48,15 +47,25 @@ struct DayRowView: View {
                 }
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
+            //Window for days ScrollView
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(LinearGradient(gradient: Gradient(colors: [.mint, Color("darkBlue")]),
-                                         startPoint:.topLeading,
-                                         endPoint: .bottomTrailing)
-                          )
+                    .fill(Color("darkBlue"))
+//                    .fill(LinearGradient(gradient: Gradient(colors: [.mint, Color("darkBlue")]),
+//                                         startPoint:.topLeading,
+//                                         endPoint: .bottomTrailing)
+//                          )
             )
-            .clipShape(RoundedRectangle(cornerRadius: 20))
-            .shadow(radius: 2)
+            //Inner shadow effect for window
+            .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(.black.opacity(0.2), lineWidth: 4)
+                        .blur(radius: 2)
+                        .offset(x: 0, y: 2)
+                        .mask(
+                            RoundedRectangle(cornerRadius: 20)
+                        )
+                    )
             .padding()
         }
     }
