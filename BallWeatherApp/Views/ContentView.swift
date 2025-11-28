@@ -17,26 +17,29 @@ struct ContentView: View {
     @State private var selectedTab: Tab = .tab2
     
     var body: some View {
+        
         TabView(selection: $selectedTab){
-            //            CompassView()
-            //                .tabItem { Label("Compass", systemImage: "barometer")}
-            //                .tag(0)
             
-            DayCombinedView()
+            CompassView()
+                .tabItem { Label("Compass", systemImage: "barometer")}
+                .tag(Tab.tab1)
+            
+            WeatherCombinedView(cities: citiesForecast)
                 .tabItem {
                     Label("Weather", systemImage: "sun.max")
                 }
                 .tag(Tab.tab2)
             
-            //            MapView()
-            //                .tabItem { Label("Map", systemImage: "map")}
-            //                .tag(2)
+            MapView()
+                .tabItem { Label("Map", systemImage: "map")}
+                .tag(Tab.tab3)
         }
-        .accentColor(.white)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var selectedCity = citiesForecast[0]
+    
     static var previews: some View {
         ContentView()
     }

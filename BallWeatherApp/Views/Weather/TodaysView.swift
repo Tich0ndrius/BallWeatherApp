@@ -7,16 +7,19 @@
 
 import SwiftUI
 
-struct DayColumnView: View {
+struct TodaysView: View {
     let day: Day
     var body: some View {
         VStack(spacing: 8){
             Text("\(day.day)")
                 .font(.system(size: 44, weight: .bold, design: .default))
                 .foregroundStyle(.white)
+                .scaledToFit()
+                .minimumScaleFactor(0.8)
+                .lineLimit(1)
                 .padding(.top)
             
-            Capsule()
+            Circle()
                 .fill(.white)
                 .frame(width: 180, height: 180)
                 .overlay(
@@ -33,16 +36,19 @@ struct DayColumnView: View {
                 }
                 .shadow(radius: 4)
             
-            Text("\(day.temp)" + " °C")
+            Text("\(day.tempC)" + " °C")
                 .font(.system(size: 40, weight: .bold, design: .default))
                 .foregroundStyle(.white)
+                .scaledToFit()
+                .minimumScaleFactor(0.8)
+                .lineLimit(1)
                 .padding(.bottom)
         }
     }
 }
 
-struct DayColumnView_Previews: PreviewProvider {
+struct TodaysView_Previews: PreviewProvider {
     static var previews: some View {
-        DayColumnView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 7))
+        TodaysView(day: citiesForecast[0].forecast[0])
     }
 }
