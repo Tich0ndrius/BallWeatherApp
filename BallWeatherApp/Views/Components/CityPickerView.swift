@@ -31,11 +31,11 @@ struct CityPickerView: View {
 }
 
 struct CityButtonView_Previews: PreviewProvider {
-    @State static var selectedCity = sampleCities[0]
+    @State static var selectedCity = citiesForecast[0]
     
     static var previews: some View {
         Group{
-            CityPickerView(cities: sampleCities, selectedCity: $selectedCity)
+            CityPickerView(cities: citiesForecast, selectedCity: $selectedCity)
         }
         .previewLayout(.fixed(width: 200, height: 80))
         .background(

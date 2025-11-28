@@ -41,7 +41,7 @@ struct WeekRowView: View {
                                 }
                                 .shadow(radius: 2)
                             
-                            Text("\(day.temp)" + " °C")
+                            Text("\(day.tempC)" + " °C")
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
                                 .scaledToFit()
@@ -76,21 +76,13 @@ struct WeekRowView: View {
                     .frame(width: 400, height: 180)
             )
             .padding()
-        }
+        }//end of GeometryReader
     }
 }
 
 struct WeekRowView_Previews: PreviewProvider {
     static var previews: some View {
-        WeekRowView(days: [
-            Day(day: "Mon", weather: .sunnyCloudy, temp: 10),
-            Day(day: "Tue", weather: .rainy, temp: 5),
-            Day(day: "Wed", weather: .snowy, temp: -3),
-            Day(day: "Thu", weather: .cloudy, temp: 8),
-            Day(day: "Fri", weather: .sunny, temp: 14),
-            Day(day: "Sat", weather: .sunny, temp: 13),
-            Day(day: "Sun", weather: .sunnyCloudy, temp: 9),
-            Day(day: "Mon", weather: .sunnyCloudy, temp: 9)]
+        WeekRowView(days: citiesForecast[0].forecast
         )
     }
 }

@@ -24,7 +24,7 @@ struct ContentView: View {
                 .tabItem { Label("Compass", systemImage: "barometer")}
                 .tag(Tab.tab1)
             
-            WeatherCombinedView(cities: sampleCities)
+            WeatherCombinedView(cities: citiesForecast)
                 .tabItem {
                     Label("Weather", systemImage: "sun.max")
                 }
@@ -38,7 +38,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @State static var selectedCity = sampleCities[0]
+    @State static var selectedCity = citiesForecast[0]
     
     static var previews: some View {
         ContentView()

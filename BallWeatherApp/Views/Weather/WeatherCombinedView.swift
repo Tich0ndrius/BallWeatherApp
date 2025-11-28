@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeatherCombinedView: View {
     
-    @State private var selectedCity = sampleCities[0]
+    @State private var selectedCity = citiesForecast[0]
     let cities: [City]
     
     var body: some View {
@@ -27,7 +27,7 @@ struct WeatherCombinedView: View {
                 }
                 Spacer()
                 
-                WeekRowView(days: Array(selectedCity.forecast.dropFirst()))
+                WeekRowView(days: Array(selectedCity.forecast))
                 
                 Spacer()
             }
@@ -36,9 +36,9 @@ struct WeatherCombinedView: View {
 }
 
 struct WeatherCombinedView_Previews: PreviewProvider {
-    @State static var selectedCity = sampleCities[0]
+    @State static var selectedCity = citiesForecast[0]
     
     static var previews: some View {
-        WeatherCombinedView(cities: sampleCities)
+        WeatherCombinedView(cities: citiesForecast)
     }
 }

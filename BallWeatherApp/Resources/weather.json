@@ -1,0 +1,73 @@
+
+[
+  {
+    "id": "A1B7F5D4-6B12-4A5C-BF11-9956EAC9B221",
+    "name": "Kyiv",
+    "forecast": [
+      { "day": "Mon", "dayUA": "Пн", "weather": "sunny",        "tempC": 18, "tempF": 64, "id": "Mon" },
+      { "day": "Tue", "dayUA": "Вт", "weather": "cloudy",       "tempC": 16, "tempF": 60, "id": "Tue" },
+      { "day": "Wed", "dayUA": "Ср", "weather": "sunnyCloudy",  "tempC": 17, "tempF": 63, "id": "Wed" },
+      { "day": "Thu", "dayUA": "Чт", "weather": "rainy",        "tempC": 14, "tempF": 57, "id": "Thu" },
+      { "day": "Fri", "dayUA": "Пт", "weather": "sunny",        "tempC": 19, "tempF": 66, "id": "Fri" },
+      { "day": "Sat", "dayUA": "Сб", "weather": "sunnyCloudy",  "tempC": 20, "tempF": 68, "id": "Sat" },
+      { "day": "Sun", "dayUA": "Нд", "weather": "rainy",        "tempC": 13, "tempF": 55, "id": "Sun" },
+      { "day": "Mon2","dayUA": "Пн", "weather": "cloudy",       "tempC": 15, "tempF": 59, "id": "Mon2" }
+    ]
+  },
+  {
+    "id": "41D92311-6A9A-47FD-908E-A4F0E3F5F23F",
+    "name": "Lviv",
+    "forecast": [
+      { "day": "Mon", "dayUA": "Пн", "weather": "cloudy",       "tempC": 14, "tempF": 57, "id": "Mon" },
+      { "day": "Tue", "dayUA": "Вт", "weather": "rainy",        "tempC": 12, "tempF": 53, "id": "Tue" },
+      { "day": "Wed", "dayUA": "Ср", "weather": "rainy",        "tempC": 11, "tempF": 51, "id": "Wed" },
+      { "day": "Thu", "dayUA": "Чт", "weather": "cloudy",       "tempC": 13, "tempF": 55, "id": "Thu" },
+      { "day": "Fri", "dayUA": "Пт", "weather": "sunnyCloudy",  "tempC": 15, "tempF": 59, "id": "Fri" },
+      { "day": "Sat", "dayUA": "Сб", "weather": "sunny",        "tempC": 17, "tempF": 63, "id": "Sat" },
+      { "day": "Sun", "dayUA": "Нд", "weather": "sunny",        "tempC": 18, "tempF": 64, "id": "Sun" },
+      { "day": "Mon2","dayUA": "Пн", "weather": "sunnyCloudy",  "tempC": 16, "tempF": 60, "id": "Mon2" }
+    ]
+  },
+  {
+    "id": "E47F912C-CE92-4F4C-B09A-4E0A4F6A9015",
+    "name": "Odesa",
+    "forecast": [
+      { "day": "Mon", "dayUA": "Пн", "weather": "sunny",        "tempC": 22, "tempF": 72, "id": "Mon" },
+      { "day": "Tue", "dayUA": "Вт", "weather": "sunnyCloudy",  "tempC": 23, "tempF": 73, "id": "Tue" },
+      { "day": "Wed", "dayUA": "Ср", "weather": "sunny",        "tempC": 24, "tempF": 75, "id": "Wed" },
+      { "day": "Thu", "dayUA": "Чт", "weather": "sunny",        "tempC": 25, "tempF": 77, "id": "Thu" },
+      { "day": "Fri", "dayUA": "Пт", "weather": "cloudy",       "tempC": 21, "tempF": 69, "id": "Fri" },
+      { "day": "Sat", "dayUA": "Сб", "weather": "rainy",        "tempC": 19, "tempF": 66, "id": "Sat" },
+      { "day": "Sun", "dayUA": "Нд", "weather": "sunnyCloudy",  "tempC": 20, "tempF": 68, "id": "Sun" },
+      { "day": "Mon2","dayUA": "Пн", "weather": "sunny",        "tempC": 23, "tempF": 73, "id": "Mon2" }
+    ]
+  },
+  {
+    "id": "8A3D51AF-9660-4C97-A5C6-4A69A8710F82",
+    "name": "Kharkiv",
+    "forecast": [
+      { "day": "Mon", "dayUA": "Пн", "weather": "cloudy",       "tempC": 15, "tempF": 59, "id": "Mon" },
+      { "day": "Tue", "dayUA": "Вт", "weather": "cloudy",       "tempC": 16, "tempF": 60, "id": "Tue" },
+      { "day": "Wed", "dayUA": "Ср", "weather": "sunnyCloudy",  "tempC": 17, "tempF": 63, "id": "Wed" },
+      { "day": "Thu", "dayUA": "Чт", "weather": "rainy",        "tempC": 13, "tempF": 55, "id": "Thu" },
+      { "day": "Fri", "dayUA": "Пт", "weather": "rainy",        "tempC": 12, "tempF": 53, "id": "Fri" },
+      { "day": "Sat", "dayUA": "Сб", "weather": "cloudy",       "tempC": 14, "tempF": 57, "id": "Sat" },
+      { "day": "Sun", "dayUA": "Нд", "weather": "sunny",        "tempC": 18, "tempF": 64, "id": "Sun" },
+      { "day": "Mon2","dayUA": "Пн", "weather": "sunnyCloudy",  "tempC": 19, "tempF": 66, "id": "Mon2" }
+    ]
+  },
+  {
+    "id": "3BF0A14A-4C13-4E81-8D43-2F41BF67F2DD",
+    "name": "Dnipro",
+    "forecast": [
+      { "day": "Mon", "dayUA": "Пн", "weather": "sunny",        "tempC": 20, "tempF": 68, "id": "Mon" },
+      { "day": "Tue", "dayUA": "Вт", "weather": "sunnyCloudy",  "tempC": 19, "tempF": 66, "id": "Tue" },
+      { "day": "Wed", "dayUA": "Ср", "weather": "cloudy",       "tempC": 18, "tempF": 64, "id": "Wed" },
+            { "day": "Thu", "dayUA": "Чт", "weather": "sunny",        "tempC": 21, "tempF": 70, "id": "Thu" },
+            { "day": "Fri", "dayUA": "Пт", "weather": "sunny",        "tempC": 22, "tempF": 72, "id": "Fri" },
+            { "day": "Sat", "dayUA": "Сб", "weather": "rainy",        "tempC": 17, "tempF": 63, "id": "Sat" },
+            { "day": "Sun", "dayUA": "Нд", "weather": "cloudy",       "tempC": 16, "tempF": 60, "id": "Sun" },
+            { "day": "Mon2","dayUA": "Пн", "weather": "sunnyCloudy",  "tempC": 18, "tempF": 64, "id": "Mon2" }
+          ]
+        }
+      ]
