@@ -13,12 +13,15 @@ struct WeekRowView: View {
     var body: some View {
         GeometryReader { geo in
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 28) {
+                HStack(spacing: 8) {
                     ForEach(days.dropFirst()){ day in
                         VStack(spacing: 4) {
                             Text("\(day.day)")
                                 .font(.system(size: 22, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
+                                .scaledToFit()
+                                .minimumScaleFactor(0.8)
+                                .lineLimit(1)
                                 .padding(.top)
                             
                             Circle()
@@ -41,16 +44,26 @@ struct WeekRowView: View {
                             Text("\(day.temp)" + " °C")
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
+                                .scaledToFit()
+                                .minimumScaleFactor(0.8)
+                                .lineLimit(1)
                                 .padding(.bottom)
                         }
+                        .frame(minWidth: 40, idealWidth: 56, maxHeight: 180)
+                        .padding()
+                        Divider()
+                            .frame(maxHeight: 180)
+                        
                     }
                 }
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
+            .navigationTitle("Week")
             //Window for days ScrollView
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color("darkBlue"))
+                    .frame(width: 400, height: 180)
 //                    .fill(LinearGradient(gradient: Gradient(colors: [.mint, Color("darkBlue")]),
 //                                         startPoint:.topLeading,
 //                                         endPoint: .bottomTrailing)
@@ -64,7 +77,9 @@ struct WeekRowView: View {
                         .offset(x: 0, y: 2)
                         .mask(
                             RoundedRectangle(cornerRadius: 20)
+                                .frame(width: 400, height: 180)
                         )
+                        .frame(width: 400, height: 180)
                     )
             .padding()
         }

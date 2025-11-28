@@ -16,7 +16,7 @@ struct TodaysView: View {
                 .foregroundStyle(.white)
                 .padding(.top)
             
-            Capsule()
+            Circle()
                 .fill(.white)
                 .frame(width: 180, height: 180)
                 .overlay(
