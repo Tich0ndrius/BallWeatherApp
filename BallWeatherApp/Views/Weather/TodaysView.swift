@@ -14,6 +14,9 @@ struct TodaysView: View {
             Text("\(day.day)")
                 .font(.system(size: 44, weight: .bold, design: .default))
                 .foregroundStyle(.white)
+                .scaledToFit()
+                .minimumScaleFactor(0.8)
+                .lineLimit(1)
                 .padding(.top)
             
             Circle()
@@ -36,6 +39,9 @@ struct TodaysView: View {
             Text("\(day.temp)" + " °C")
                 .font(.system(size: 40, weight: .bold, design: .default))
                 .foregroundStyle(.white)
+                .scaledToFit()
+                .minimumScaleFactor(0.8)
+                .lineLimit(1)
                 .padding(.bottom)
         }
     }

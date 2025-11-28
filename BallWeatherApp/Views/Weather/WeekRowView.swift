@@ -53,34 +53,28 @@ struct WeekRowView: View {
                         .padding()
                         Divider()
                             .frame(maxHeight: 180)
-                        
-                    }
+                    } //end of ForEach
                 }
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
-            .navigationTitle("Week")
             //Window for days ScrollView
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color("darkBlue"))
                     .frame(width: 400, height: 180)
-//                    .fill(LinearGradient(gradient: Gradient(colors: [.mint, Color("darkBlue")]),
-//                                         startPoint:.topLeading,
-//                                         endPoint: .bottomTrailing)
-//                          )
             )
             //Inner shadow effect for window
             .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(.black.opacity(0.2), lineWidth: 4)
-                        .blur(radius: 2)
-                        .offset(x: 0, y: 2)
-                        .mask(
-                            RoundedRectangle(cornerRadius: 20)
-                                .frame(width: 400, height: 180)
-                        )
-                        .frame(width: 400, height: 180)
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(.black.opacity(0.2), lineWidth: 4)
+                    .blur(radius: 2)
+                    .offset(x: 0, y: 2)
+                    .mask(
+                        RoundedRectangle(cornerRadius: 20)
+                            .frame(width: 400, height: 180)
                     )
+                    .frame(width: 400, height: 180)
+            )
             .padding()
         }
     }
