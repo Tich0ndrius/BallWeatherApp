@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct DayCombinedView: View {
+struct WeatherCombinedView: View {
     
-    @Binding var selectedCity: City
+    @State private var selectedCity = sampleCities[0]
     let cities: [City]
     
     var body: some View {
@@ -23,12 +23,11 @@ struct DayCombinedView: View {
                 CityPickerView(cities: cities, selectedCity: $selectedCity)
                 //is there a better method?
                 if let today = selectedCity.forecast.first {
-                    DayColumnView(day: today)
+                    TodaysView(day: today)
                 }
                 Spacer()
                 
-                DayRowView(days: Array(selectedCity.forecast.dropFirst()))
-                
+                WeekRowView(days: Array(selectedCity.forecast.dropFirst()))
                 
                 Spacer()
             }
@@ -36,10 +35,10 @@ struct DayCombinedView: View {
     }
 }
 
-struct DayCombinedView_Previews: PreviewProvider {
+struct WeatherCombinedView_Previews: PreviewProvider {
     @State static var selectedCity = sampleCities[0]
     
     static var previews: some View {
-        DayCombinedView(selectedCity: $selectedCity, cities: sampleCities)
+        WeatherCombinedView(cities: sampleCities)
     }
 }

@@ -15,7 +15,6 @@ struct ContentView: View {
     }
     
     @State private var selectedTab: Tab = .tab2
-    @State private var selectedCity = sampleCities[0]
     
     var body: some View {
         
@@ -25,7 +24,7 @@ struct ContentView: View {
                 .tabItem { Label("Compass", systemImage: "barometer")}
                 .tag(Tab.tab1)
             
-            DayCombinedView(selectedCity: $selectedCity, cities: sampleCities)
+            WeatherCombinedView(cities: sampleCities)
                 .tabItem {
                     Label("Weather", systemImage: "sun.max")
                 }

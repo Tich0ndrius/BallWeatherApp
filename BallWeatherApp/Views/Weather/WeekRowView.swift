@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DayRowView: View {
+struct WeekRowView: View {
     let days: [Day]
     
     var body: some View {
@@ -71,9 +71,9 @@ struct DayRowView: View {
     }
 }
 
-struct DayRowView_Previews: PreviewProvider {
+struct WeekRowView_Previews: PreviewProvider {
     static var previews: some View {
-        DayRowView(days: [
+        WeekRowView(days: [
             Day(day: "Mon", weather: .sunnyCloudy, temp: 10),
             Day(day: "Tue", weather: .rainy, temp: 5),
             Day(day: "Wed", weather: .snowy, temp: -3),

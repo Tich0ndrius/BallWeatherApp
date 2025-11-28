@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DayColumnView: View {
+struct TodaysView: View {
     let day: Day
     var body: some View {
         VStack(spacing: 8){
@@ -41,8 +41,8 @@ struct DayColumnView: View {
     }
 }
 
-struct DayColumnView_Previews: PreviewProvider {
+struct TodaysView_Previews: PreviewProvider {
     static var previews: some View {
-        DayColumnView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 7))
+        TodaysView(day: Day(day: "Mon", weather: .sunnyCloudy, temp: 7))
     }
 }
