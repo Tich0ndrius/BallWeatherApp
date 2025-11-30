@@ -36,7 +36,7 @@ struct TodaysView: View {
                 }
                 .shadow(radius: 4)
             
-            Text("\(day.tempC)" + " °C")
+            Text(temperatureText(for: day))
                 .font(.system(size: 40, weight: .bold, design: .default))
                 .foregroundStyle(.white)
                 .scaledToFit()
@@ -49,6 +49,14 @@ struct TodaysView: View {
 
 struct TodaysView_Previews: PreviewProvider {
     static var previews: some View {
-        TodaysView(day: citiesForecast[0].forecast[0])
+        Group{
+            TodaysView(day: citiesForecast[0].forecast[0])
+        }
+        .previewLayout(.fixed(width: 240, height: 320))
+        .background(
+            Rectangle()
+                .fill(Color(.blue))
+                .frame(width: 240, height: 400)
+        )
     }
 }

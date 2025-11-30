@@ -41,7 +41,7 @@ struct WeekRowView: View {
                                 }
                                 .shadow(radius: 2)
                             
-                            Text("\(day.tempC)" + " °C")
+                            Text(temperatureText(for: day))
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
                                 .scaledToFit()
