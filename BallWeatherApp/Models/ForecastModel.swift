@@ -69,6 +69,15 @@ struct Day: Identifiable, Codable, Hashable {
     var id: String { day }
 }
 
+func isNightTime() -> Bool {
+    let now = Date()
+    let calendar = Calendar.current
+    
+    let hour = calendar.component(.hour, from: now)
+    
+    return hour >= 20 || hour < 6
+}
+
 
 
 //let days: [Day] = [

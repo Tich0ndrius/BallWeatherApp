@@ -10,14 +10,12 @@ import SwiftUI
 struct WeatherCombinedView: View {
     
     @State private var selectedCity = citiesForecast[0]
+    
     let cities: [City]
     
     var body: some View {
         ZStack{
-            LinearGradient(gradient: Gradient(colors: [.mint, .blue]),
-                           startPoint:.topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.top)
+            BackgroundColorView()
             
             VStack{
                 CityPickerView(cities: cities, selectedCity: $selectedCity)
