@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 func formattedTemperature(celsius: Int) -> String {
     let temp = Measurement(value: Double(celsius), unit: UnitTemperature.celsius)
 
@@ -16,11 +15,10 @@ func formattedTemperature(celsius: Int) -> String {
     formatter.unitOptions = .naturalScale
     formatter.numberFormatter.maximumFractionDigits = 0
     formatter.unitStyle = .medium
-
+    
     return formatter.string(from: temp)
 }
 
 func temperatureText(for day: Day) -> String {
     formattedTemperature(celsius: day.tempC)
 }
-
