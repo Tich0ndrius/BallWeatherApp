@@ -20,13 +20,20 @@ struct WeatherCombinedView: View {
             VStack{
                 CityPickerView(cities: cities, selectedCity: $selectedCity)
                 //is there a better method?
-                if let today = selectedCity.forecast.first {
-                    TodaysView(day: today)
+                ZStack{
+                    if let today = selectedCity.forecast.first {
+                        TodaysView(day: today)
+                            .id(selectedCity.id).transition(.opacity)
+                    }
                 }
+                .animation(.easeInOut(duration: 0.5), value: selectedCity)
                 Spacer()
                 
-                WeekRowView(days: Array(selectedCity.forecast))
-                
+                ZStack{
+                    WeekRowView(days: Array(selectedCity.forecast))
+                        .id(selectedCity.id).transition(.opacity)
+                }
+                .animation(.easeInOut(duration: 0.5), value: selectedCity)
                 Spacer()
             }
         }

@@ -16,6 +16,7 @@ func formattedTemperature(celsius: Int) -> String {
     formatter.unitOptions = .naturalScale
     formatter.numberFormatter.maximumFractionDigits = 0
     formatter.unitStyle = .medium
+    
 
     return formatter.string(from: temp)
 }
