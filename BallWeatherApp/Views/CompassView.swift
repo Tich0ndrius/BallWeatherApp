@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct CompassView: View {
+    @ObservedObject var heading = CompassViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "location.north.line.fill")
+            .resizable()
+            .frame(width: 30, height: 30)
+            .rotationEffect(.degrees(-Double(heading.heading)))
+            .padding()
+            .background(.thinMaterial)
+            .clipShape(Circle())
+            .shadow(radius: 3)
     }
 }
 
