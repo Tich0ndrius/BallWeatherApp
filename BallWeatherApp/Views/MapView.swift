@@ -10,14 +10,19 @@ import MapKit
 
 struct MapView: View {
     
-    @State private var region = MKCoordinateRegion(
-        center: .init(latitude: 50, longitude: 30),
-        span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)
-    )
+    @StateObject private var viewModel = MapViewModel()
+//    @State private var region = MKCoordinateRegion(
+//        center: .init(latitude: 50, longitude: 30),
+//        span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)
+//    )
     
     var body: some View {
-        Map(coordinateRegion: $region, showsUserLocation: true)
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
             .edgesIgnoringSafeArea(.top)
+            .accentColor(Color(.systemPink))
+            .onAppear {
+                viewModel.checkIfLocationServicesEnabled()
+            }
     }
 }
 

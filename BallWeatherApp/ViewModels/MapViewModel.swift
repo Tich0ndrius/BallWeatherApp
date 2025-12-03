@@ -1,0 +1,54 @@
+//
+//  MapViewModel.swift
+//  BallWeatherApp
+//
+//  Created by Tykhon on 03.12.2025.
+//
+
+import MapKit
+
+enum MapDetails {
+    static let startingLocation = CLLocationCoordinate2D(latitude: 52.52, longitude: 13.4)
+    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+}
+
+final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var region = MKCoordinateRegion(center: MapDetails.startingLocation, span: MapDetails.defaultSpan)
+    
+    var locationManager: CLLocationManager?
+    
+    func checkIfLocationServicesEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager!.delegate = self
+        } else {
+            print("Please turn on your location services")
+        }
+    }
+    
+    private func checkLocationAuthorization() {
+        guard let locationManager = locationManager else { return }
+        
+        switch locationManager .authorizationStatus {
+            
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            print("Your location is restricted likely due to parental controls.")
+        case .denied:
+            print("You have denied this app location permission. Go into settings to change it.")
+        case .authorizedAlways, .authorizedWhenInUse:
+            let coordinate = locationManager.location?.coordinate
+                ?? MapDetails.startingLocation
+
+            region = MKCoordinateRegion(center: coordinate,
+                                        span: MapDetails.defaultSpan)
+        @unknown default:
+            break
+        }
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+    }
+}
