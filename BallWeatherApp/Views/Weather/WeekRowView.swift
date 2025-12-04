@@ -67,9 +67,13 @@ struct WeekRowView: View {
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
             //Window for days ScrollView
+            .onAppear{
+                isNight = isNightTime()
+                startTimer()
+            }
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(isNight || colorScheme.isDark ? Color(.black) : Color("darkBlue"))
+                    .fill(isNight || colorScheme.isDark ? Color(.gray) : Color("darkBlue"))
                     .frame(width: 400, height: 180)
             )
             //Inner shadow effect for window
