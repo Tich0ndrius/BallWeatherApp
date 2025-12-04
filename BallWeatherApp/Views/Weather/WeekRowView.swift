@@ -29,7 +29,7 @@ struct WeekRowView: View {
                                 .font(.system(size: 22, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
                                 .scaledToFit()
-                                .minimumScaleFactor(0.8)
+                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
                                 .padding(.top)
                             
@@ -41,7 +41,7 @@ struct WeekRowView: View {
                                         .renderingMode(.original)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 48, height: 48)
+                                        .frame(minWidth: 36, idealWidth: 48, maxWidth: 48, minHeight: 36, idealHeight: 48, maxHeight: 48)
                                         .shadow(radius: 2)
                                 )
                                 .overlay {
@@ -54,7 +54,7 @@ struct WeekRowView: View {
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
                                 .scaledToFit()
-                                .minimumScaleFactor(0.8)
+                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
                                 .padding(.bottom)
                         }

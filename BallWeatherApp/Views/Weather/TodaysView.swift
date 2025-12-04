@@ -15,20 +15,21 @@ struct TodaysView: View {
                 .font(.system(size: 44, weight: .bold, design: .default))
                 .foregroundStyle(.white)
                 .scaledToFit()
-                .minimumScaleFactor(0.8)
+                .minimumScaleFactor(0.6)
                 .lineLimit(1)
                 .padding(.top)
             
             Circle()
                 .fill(.white)
-                .frame(width: 180, height: 180)
+                .frame(minWidth: 96, maxWidth: 180, minHeight: 96, maxHeight: 180)
                 .overlay(
                     Image(systemName: day.weather.iconName())
                         .renderingMode(.original)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 144, height: 144)
+                        .frame(minWidth: 66, maxWidth: 144, minHeight: 66, maxHeight: 144)
                         .shadow(radius: 2)
+                        .clipShape(Circle())
                 )
                 .overlay {
                     Circle()
@@ -40,7 +41,7 @@ struct TodaysView: View {
                 .font(.system(size: 40, weight: .bold, design: .default))
                 .foregroundStyle(.white)
                 .scaledToFit()
-                .minimumScaleFactor(0.8)
+                .minimumScaleFactor(0.6)
                 .lineLimit(1)
                 .padding(.bottom)
         }

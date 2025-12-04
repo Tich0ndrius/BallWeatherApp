@@ -32,7 +32,7 @@
     "id": "E47F912C-CE92-4F4C-B09A-4E0A4F6A9015",
     "name": "Odesa",
     "forecast": [
-      { "day": "Mon", "dayUA": "Пн", "weather": "sunny",        "tempC": 22, "tempF": 72, "id": "Mon" },
+      { "day": "Mon", "dayUA": "Пн", "weather": "sunnyCloudy",        "tempC": 22, "tempF": 72, "id": "Mon" },
       { "day": "Tue", "dayUA": "Вт", "weather": "sunnyCloudy",  "tempC": 23, "tempF": 73, "id": "Tue" },
       { "day": "Wed", "dayUA": "Ср", "weather": "sunny",        "tempC": 24, "tempF": 75, "id": "Wed" },
       { "day": "Thu", "dayUA": "Чт", "weather": "sunny",        "tempC": 25, "tempF": 77, "id": "Thu" },
@@ -46,7 +46,7 @@
     "id": "8A3D51AF-9660-4C97-A5C6-4A69A8710F82",
     "name": "Kharkiv",
     "forecast": [
-      { "day": "Mon", "dayUA": "Пн", "weather": "cloudy",       "tempC": 15, "tempF": 59, "id": "Mon" },
+      { "day": "Mon", "dayUA": "Пн", "weather": "rainy",       "tempC": 15, "tempF": 59, "id": "Mon" },
       { "day": "Tue", "dayUA": "Вт", "weather": "cloudy",       "tempC": 16, "tempF": 60, "id": "Tue" },
       { "day": "Wed", "dayUA": "Ср", "weather": "sunnyCloudy",  "tempC": 17, "tempF": 63, "id": "Wed" },
       { "day": "Thu", "dayUA": "Чт", "weather": "rainy",        "tempC": 13, "tempF": 55, "id": "Thu" },
