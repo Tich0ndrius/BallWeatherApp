@@ -89,6 +89,20 @@ extension ColorScheme {
     }
 }
 
+
+enum Direction: String, CaseIterable {
+    case N, E, S, W
+    
+    var angle: Double {
+        switch self {
+        case .N: return 0
+        case .E: return 90
+        case .S: return 180
+        case .W: return 270
+        }
+    }
+}
+
 //let days: [Day] = [
 //    Day(day: "Mon", weather: .sunnyCloudy, tempC: 10),
 //    Day(day: "Tue", weather: .rainy, tempC: 5),

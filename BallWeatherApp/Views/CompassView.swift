@@ -9,16 +9,33 @@ import SwiftUI
 
 struct CompassView: View {
     @ObservedObject var heading = CompassViewModel()
-
+    
     var body: some View {
-        Image(systemName: "location.north.line.fill")
-            .resizable()
-            .frame(width: 30, height: 30)
-            .rotationEffect(.degrees(-Double(heading.heading)))
-            .padding()
-            .background(.thinMaterial)
-            .clipShape(Circle())
-            .shadow(radius: 3)
+        ZStack {
+            Color.gray.edgesIgnoringSafeArea(.top)
+            
+            // Круг со сторонами света
+            ZStack {
+                ForEach(Direction.allCases, id: \.self) { direction in
+                    Text(direction.rawValue)
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                        .offset(y: -70)
+                        .rotationEffect(.degrees(direction.angle))
+                }
+                
+                // Иконка компаса
+                Image(systemName: "location.north.line.fill")
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .rotationEffect(.degrees(-heading.heading))
+                    .padding()
+                    .background(.thinMaterial)
+                    .clipShape(Circle())
+                    .shadow(radius: 3)
+            }
+        }
     }
 }
 
