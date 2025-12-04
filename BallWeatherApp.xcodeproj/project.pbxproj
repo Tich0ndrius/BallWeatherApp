@@ -34,6 +34,7 @@
 		416555A72EDC777F00B52252 /* BackgroundColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorView.swift; sourceTree = "<group>"; };
 		4179A5892EE0664400D97E2E /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		4179A58B2EE0724F00D97E2E /* CompassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassViewModel.swift; sourceTree = "<group>"; };
+		4179A58D2EE241AB00D97E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4184173C2ED658C80047507A /* BallWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BallWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4184173F2ED658C80047507A /* BallWeatherAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallWeatherAppApp.swift; sourceTree = "<group>"; };
 		418417412ED658C80047507A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		4184173E2ED658C80047507A /* BallWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				4179A58D2EE241AB00D97E2E /* Info.plist */,
 				4179A5882EE0662000D97E2E /* ViewModels */,
 				416555A22EDA0B8D00B52252 /* Resources */,
 				4184173F2ED658C80047507A /* BallWeatherAppApp.swift */,
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				418417412ED658C80047507A /* ContentView.swift */,
+				418417502ED741B90047507A /* CityPickerView.swift */,
 				4165559E2ED8959F00B52252 /* CompassView.swift */,
 				416555A02ED895B900B52252 /* MapView.swift */,
 				418417532ED742140047507A /* Weather */,
@@ -126,7 +129,6 @@
 		418417522ED741C70047507A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				418417502ED741B90047507A /* CityPickerView.swift */,
 				416555A72EDC777F00B52252 /* BackgroundColorView.swift */,
 			);
 			path = Components;
@@ -368,10 +370,11 @@
 				DEVELOPMENT_TEAM = SP38KT5P9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BallWeatherApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -398,10 +401,11 @@
 				DEVELOPMENT_TEAM = SP38KT5P9U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BallWeatherApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show it on the map.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -14,18 +14,17 @@ struct CompassView: View {
         ZStack {
             Color.gray.edgesIgnoringSafeArea(.top)
             
-            // Круг со сторонами света
+            // Cardinal directions
             ZStack {
                 ForEach(Direction.allCases, id: \.self) { direction in
                     Text(direction.rawValue)
-                        .font(.caption)
-                        .fontWeight(.bold)
+                        .font(.system(size: 20, weight: .bold, design: .default))
                         .foregroundStyle(.white)
                         .offset(y: -70)
                         .rotationEffect(.degrees(direction.angle))
                 }
                 
-                // Иконка компаса
+                // Compass icon
                 Image(systemName: "location.north.line.fill")
                     .resizable()
                     .frame(width: 60, height: 60)
