@@ -10,6 +10,7 @@ import SwiftUI
 struct WeekRowView: View {
     let days: [Day]
     @State private var isNight = false
+    @Environment(\.colorScheme) var colorScheme
     
     func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
@@ -68,7 +69,7 @@ struct WeekRowView: View {
             //Window for days ScrollView
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(isNight ? Color(.black) : Color("darkBlue"))
+                    .fill(isNight || colorScheme.isDark ? Color(.black) : Color("darkBlue"))
                     .frame(width: 400, height: 180)
             )
             //Inner shadow effect for window

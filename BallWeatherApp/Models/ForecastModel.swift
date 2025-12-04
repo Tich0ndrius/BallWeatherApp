@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 var citiesForecast: [City] = load("weather.json")
 
@@ -78,7 +79,15 @@ func isNightTime() -> Bool {
     return hour >= 20 || hour < 6
 }
 
-
+extension ColorScheme {
+    var isDark: Bool {
+        switch self {
+        case .dark: return true
+        case .light: return false
+        @unknown default: return false
+        }
+    }
+}
 
 //let days: [Day] = [
 //    Day(day: "Mon", weather: .sunnyCloudy, tempC: 10),

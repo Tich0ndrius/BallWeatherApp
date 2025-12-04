@@ -10,10 +10,11 @@ import SwiftUI
 struct BackgroundColorView: View {
     
     @State private var isNight = false
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         Group{
-            LinearGradient(gradient: Gradient(colors: (isNight ? [.black, .gray] : [.mint, .blue])),
+            LinearGradient(gradient: Gradient(colors: (isNight || colorScheme.isDark ? [.black, .gray] : [.mint, .blue])),
                        startPoint:.topLeading,
                        endPoint: .bottomTrailing)
             .edgesIgnoringSafeArea(.top)

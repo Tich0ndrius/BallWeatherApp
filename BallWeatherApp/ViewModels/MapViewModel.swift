@@ -44,7 +44,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             region = MKCoordinateRegion(center: coordinate,
                                         span: MapDetails.defaultSpan)
         @unknown default:
-            break
+            print("Received unknown authorization status: \(locationManager.authorizationStatus)")
         }
     }
     
