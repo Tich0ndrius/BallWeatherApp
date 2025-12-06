@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import CoreLocation
 
 var citiesForecast: [City] = load("weather.json")
 
@@ -78,6 +80,40 @@ func isNightTime() -> Bool {
     return hour >= 20 || hour < 6
 }
 
+extension ColorScheme {
+    var isDark: Bool {
+        switch self {
+        case .dark: return true
+        case .light: return false
+        @unknown default: return false
+        }
+    }
+}
+
+
+enum Direction: String, CaseIterable {
+    case N, E, S, W
+    
+    var angle: Double {
+        switch self {
+        case .N: return 0
+        case .E: return 90
+        case .S: return 180
+        case .W: return 270
+        }
+    }
+}
+
+struct Location: Identifiable, Codable, Equatable {
+    let id: UUID
+    var name: String
+    var description: String
+    var latitude: Double
+    var longitude: Double
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+}
 
 
 //let days: [Day] = [

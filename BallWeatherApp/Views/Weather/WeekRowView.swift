@@ -9,6 +9,15 @@ import SwiftUI
 
 struct WeekRowView: View {
     let days: [Day]
+    @State private var isNight = false
+    @Environment(\.colorScheme) var colorScheme
+    
+    func startTimer() {
+        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+            isNight = isNightTime()
+        }
+        
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -20,7 +29,7 @@ struct WeekRowView: View {
                                 .font(.system(size: 22, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
                                 .scaledToFit()
-                                .minimumScaleFactor(0.8)
+                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
                                 .padding(.top)
                             
@@ -32,7 +41,7 @@ struct WeekRowView: View {
                                         .renderingMode(.original)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 48, height: 48)
+                                        .frame(minWidth: 36, idealWidth: 48, maxWidth: 48, minHeight: 36, idealHeight: 48, maxHeight: 48)
                                         .shadow(radius: 2)
                                 )
                                 .overlay {
@@ -45,7 +54,7 @@ struct WeekRowView: View {
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
                                 .scaledToFit()
-                                .minimumScaleFactor(0.8)
+                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
                                 .padding(.bottom)
                         }
@@ -57,10 +66,14 @@ struct WeekRowView: View {
                 }
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
+            .onAppear{
+                isNight = isNightTime()
+                startTimer()
+            }
             //Window for days ScrollView
             .background(
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(Color("darkBlue"))
+                    .fill(isNight || colorScheme.isDark ? Color(.gray) : Color("darkBlue"))
                     .frame(width: 400, height: 180)
             )
             //Inner shadow effect for window
