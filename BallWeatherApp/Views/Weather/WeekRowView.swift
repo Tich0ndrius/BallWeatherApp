@@ -9,27 +9,17 @@ import SwiftUI
 
 struct WeekRowView: View {
     let days: [Day]
-    @State private var isNight = false
-    @Environment(\.colorScheme) var colorScheme
     
-    func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
-            isNight = isNightTime()
-        }
-        
-    }
     
     var body: some View {
         GeometryReader { geo in
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
+                HStack(spacing: 4) {
                     ForEach(days.dropFirst()){ day in
                         VStack(spacing: 4) {
                             Text("\(day.day)")
                                 .font(.system(size: 22, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
-                                .scaledToFit()
-                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
                                 .padding(.top)
                             
@@ -53,41 +43,17 @@ struct WeekRowView: View {
                             Text(temperatureText(for: day))
                                 .font(.system(size: 20, weight: .bold, design: .default))
                                 .foregroundStyle(.white)
-                                .scaledToFit()
-                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
                                 .padding(.bottom)
                         }
                         .frame(minWidth: 40, idealWidth: 56, maxHeight: 180)
-                        .padding()
+                        .padding(14)
                         Divider()
                             .frame(maxHeight: 180)
                     } //end of ForEach
                 }
                 .frame(minWidth: geo.size.width, alignment: .center)
             }
-            .onAppear{
-                isNight = isNightTime()
-                startTimer()
-            }
-            //Window for days ScrollView
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(isNight || colorScheme.isDark ? Color(.gray) : Color("darkBlue"))
-                    .frame(width: 400, height: 180)
-            )
-            //Inner shadow effect for window
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.black.opacity(0.2), lineWidth: 4)
-                    .blur(radius: 2)
-                    .offset(x: 0, y: 2)
-                    .mask(
-                        RoundedRectangle(cornerRadius: 20)
-                            .frame(width: 400, height: 180)
-                    )
-                    .frame(width: 400, height: 180)
-            )
             .padding()
         }//end of GeometryReader
     }
@@ -97,5 +63,6 @@ struct WeekRowView_Previews: PreviewProvider {
     static var previews: some View {
         WeekRowView(days: citiesForecast[0].forecast
         )
+            .background(.mint)
     }
 }
