@@ -16,7 +16,7 @@ enum MapDetails {
 
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    //MARK: saveLocation
+    //MARK: saveLocation 
     
     private(set) var locations = [Location]()
     var selectedPlace: Location?

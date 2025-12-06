@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
 
 var citiesForecast: [City] = load("weather.json")
 
@@ -109,6 +110,9 @@ struct Location: Identifiable, Codable, Equatable {
     var description: String
     var latitude: Double
     var longitude: Double
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
 
 
